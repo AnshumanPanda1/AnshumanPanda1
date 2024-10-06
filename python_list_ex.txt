@@ -1,3 +1,8 @@
 #Example1: Create a list and display
 lst = [1, 2, 3, 4]
 print(lst)
+
+#Example2: use append method
+lst = [1, 2, 3, 4]
+lst.append(5)
+print(lst)
