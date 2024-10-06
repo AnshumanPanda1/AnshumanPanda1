@@ -1,0 +1,144 @@
+#Creating 1D List using Naive Methods
+N = 5
+ar = [0]*N
+print(ar)
+
+#output: [0, 0, 0, 0, 0]
+
+#Creating 1D List using List Comprehension
+N = 5
+arr = [0 for i in range(N)]
+print(arr)
+
+#output: [0, 0, 0, 0, 0]
+
+#Creating a 2-D list
+rows, cols = (5, 5)
+arr = [[0]*cols]*rows
+print(arr)
+
+#output: [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]]
+
+#Problem with this approach
+rows, cols = (5, 5)
+arr = [[0]*cols]*rows
+print(arr, "before")
+
+arr[0][0] = 1 # update only one element
+print(arr, "after")
+
+#output: ([[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]], 'before')
+([[1, 0, 0, 0, 0], [1, 0, 0, 0, 0], [1, 0, 0, 0, 0], [1, 0, 0, 0, 0], [1, 0, 0, 0, 0]], 'after')
+
+#Creating 2D List using List Comprehension
+rows, cols = (5, 5)
+arr = [[0 for i in range(cols)] for j in range(rows)]
+print(arr)
+
+#output: [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]]
+
+#Creating 1D List using Empty List
+arr=[]
+rows, cols=5,5
+for i in range(rows):
+    col = []
+    for j in range(cols):
+        col.append(0)
+    arr.append(col)
+print(arr)
+
+#output: [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]]
+
+#Initializing 2D Array
+#Example1
+# Python 3 program to demonstrate working 
+# of method 1 and method 2.
+rows, cols = (5, 5)
+# method 2 1st approach
+arr = [[0]*cols]*rows
+# lets change the first element of the 
+# first row to 1 and print the array
+arr[0][0] = 1
+
+for row in arr:
+    print(row)
+
+# method 2 2nd approach
+arr = [[0 for i in range(cols)] for j in range(rows)]
+
+# again in this new array lets change
+# the first element of the first row 
+# to 1 and print the array
+arr[0][0] = 1
+for row in arr:
+    print(row)
+#output:
+[1, 0, 0, 0, 0]
+[1, 0, 0, 0, 0]
+[1, 0, 0, 0, 0]
+[1, 0, 0, 0, 0]
+[1, 0, 0, 0, 0]
+
+[1, 0, 0, 0, 0]
+[0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0]
+
+#Chek if two objects are pointing to the same object
+rows, cols = (5, 5)
+
+# method 2 2nd approach
+arr = [[0 for i in range(cols)] for j in range(rows)]
+
+# check if arr[0] and arr[1] refer to
+# the same object
+print(arr[0] is arr[1]) # prints False
+
+# method 2 1st approach
+arr = [[0]*cols]*rows
+
+# check if arr[0] and arr[1] refer to the same object prints True because there is only one
+#list object being created.
+print(arr[0] is arr[1])
+
+#Questins
+Q1-How to convert 2D array to list in Python?
+# Example 2D array (list of lists)
+two_d_array = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+
+# Convert 2D array to a single list
+flat_list = [item for sublist in two_d_array for item in sublist]
+
+print(flat_list)
+
+Q2-How to store 2D array in Python list?
+# Initialize a 2D array (list of lists)
+two_d_array = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+# Accessing elements in the 2D array
+print(two_d_array[0][0])  # Accessing the element at row 0, column 0 (outputs: 1)
+
+Q3-How do you navigate a 2D list in Python?
+for row in two_d_array:
+    for element in row:
+        print(element, end=" ")
+    print()
+
+Q4-How to get data from 2D array in Python?
+# Accessing specific element
+element = two_d_array[1][2]  # Accessing element at row 1, column 2 (outputs: 6)
+
+# Accessing entire row
+row = two_d_array[0]  # Accessing entire first row (outputs: [1, 2, 3])
+
+# Accessing entire column (using list comprehension)
+column = [row[1] for row in two_d_array]  # Accessing second column (outputs: [2, 5, 8])
+Q5-How to read data from 2D array?
+To read or access data from a 2D array, use indexing to retrieve specific elements, rows, or columns as needed.
+Q6-How to get value in 2D array?
+Use double indexing (array[row_index][column_index]) to get the value at a specific position in the 2D array.
+
